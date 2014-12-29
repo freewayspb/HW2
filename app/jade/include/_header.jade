@@ -25,8 +25,42 @@ header.b-header
             section.b-header__links
                 ul.b-header__links-items
                     li.b-header__links-item
-                        a Карта проезда
+                        a(href="") Карта проезда
                     li.b-header__links-item
-                        a История заказов
-            section.b-header__middle-cart
-                a Корзина
+                        a(href="") История заказов
+            section.b-header__middle-cart-wrapper
+                a(href="").b-header__middle-cart Корзина&nbsp;
+                    span.b-header__middle-cart-count (3)
+                ul.b-cart__content-items
+                    li.b-cart__content-item
+                        a(href="").b-cart__content-item-link
+                            .b-cart__content-item-link-image
+                                img(src="/img/production/iPhone-6.jpg" alt="iPhone 6")
+                            p.b-cart__content-item-link-title iPhone 6
+                    li.b-cart__content-item
+                        a(href="").b-cart__content-item-link
+                            .b-cart__content-item-link-image
+                                img(src="/img/production/iPad-Air.jpg" alt="iPad Air Wi-Fi + Cellular 128GB - Silver")
+                            p.b-cart__content-item-link-title iPad Air Wi-Fi + Cellular 128GB - Silver
+                    li.b-cart__content-item
+                        a(href="").b-cart__content-item-link
+                            .b-cart__content-item-link-image
+                                img(src="/img/production/MacBook-Air.jpg" alt="MacBook Air")
+                            p.b-cart__content-item-link-title MacBook Air
+    .b-header__menu-container
+        nav.b-header__menu
+            ul.b-header__menu-list
+                li.b-header__menu-list-item
+                    a(href="").b-header__menu-list-item-link Мобильные телефоны
+                li.b-header__menu-list-item
+                    a(href="").b-header__menu-list-item-link.b-header__menu-list-item-link--active Планшеты
+                li.b-header__menu-list-item
+                    a(href="").b-header__menu-list-item-link Mp3 плееры
+                li.b-header__menu-list-item
+                    a(href="").b-header__menu-list-item-link Персональные компьютеры
+                li.b-header__menu-list-item
+                    a(href="").b-header__menu-list-item-link Ноутбуки
+                li.b-header__menu-list-item
+                    a(href="").b-header__menu-list-item-link Apple TV
+                li.b-header__menu-list-item
+                    a(href="").b-header__menu-list-item-link Аксессуары
