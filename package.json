@@ -28,6 +28,7 @@
     "uglify": "^0.1.1",
     "gulp-useref": "^1.0.2",
     "opn": "^1.0.1",
+    "gulp-rename": "^1.2.0",
     "wiredep": "^2.2.2"
   }
 }

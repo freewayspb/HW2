@@ -8,6 +8,7 @@ var gulp = require('gulp'),
     gulpif = require('gulp-if'),
     uglify = require('gulp-uglify'),
     less = require('gulp-less'),
+    rename = require("gulp-rename"),
     path = require('path'),
     minifyCss = require('gulp-minify-css'),
     LessPluginCleanCSS = require("less-plugin-clean-css"),
@@ -17,8 +18,8 @@ var gulp = require('gulp'),
     imagemin = require('gulp-imagemin');
 
 // Компилируем Jade
-gulp.task('jade', function() {
-        gulp.src(['./app/jade/*.jade', '!./app/jade/_*.jade'])
+gulp.task('jade', function () {
+    gulp.src(['./app/jade/*.jade', '!./app/jade/_*.jade'])
         .pipe(jade({
             pretty: true
         }))  // Собираем Jade только в папке ./app/jade/ исключая файлы с _*
@@ -28,13 +29,24 @@ gulp.task('jade', function() {
 });
 
 // Собираем JS
-gulp.task('js', function() {
-    gulp.src(['./app/js/**/*.js', '!./app/js/vendor/**/*.js'])
+gulp.task('js', function () {
+    gulp.src(['./app/js/_modules/*.js', '!./app/js/vendor/**/*.js'])
         .pipe(concat('scripts.js')) // Собираем все JS, кроме тех которые находятся в /app/js/vendor/**
-        .pipe(gulp.dest('./www/js'))
+        .pipe(gulp.dest('./www/js/_modules'))
+        .pipe(rename({suffix: '.min'}))
+        .pipe(uglify())
+        .pipe(gulp.dest('www/js'))
         .pipe(connect.reload()); // даем команду на перезагрузку страницы
 });
-
+// собираем и минифицируем JS plugins
+gulp.task('compress-plugins', function() {
+    gulp.src('./app/js/_plugins/*.js')
+        .pipe(concat('plugins.js'))
+        .pipe(gulp.dest('www/js/_plugins'))
+        .pipe(rename({suffix: '.min'}))
+        .pipe(uglify())
+        .pipe(gulp.dest('www/js'));
+});
 // Компилируем LESS
 
 gulp.task('less', function () {
@@ -47,7 +59,7 @@ gulp.task('less', function () {
 
 
 // Копируем и минимизируем изображения
-gulp.task('images', function() {
+gulp.task('images', function () {
     gulp.src('./app/img/**/*')
         .pipe(imagemin())
         .pipe(gulp.dest('./www/img'))
@@ -75,7 +87,7 @@ gulp.task('wiredep', function () {
 });
 
 // Server
-gulp.task('connect', function() {
+gulp.task('connect', function () {
     connect.server({
         root: 'www',
         livereload: true
@@ -84,29 +96,32 @@ gulp.task('connect', function() {
 });
 
 // html
-gulp.task('html', function(){
+gulp.task('html', function () {
     gulp.src('app/*.html')
         .pipe(connect.reload());
 })
 
 // js
-gulp.task('js', function(){
-    gulp.src('app/js/*.js')
-        .pipe(connect.reload());
-})
+//gulp.task('js', function () {
+//    gulp.src('app/js/*.js')
+//        .pipe(concat('script.js'))
+//        .pipe(gulp.dest('www/js'))
+//        .pipe(connect.reload());
+//})
 
 // css
-gulp.task('css', function(){
+gulp.task('css', function () {
     gulp.src('app/css/*.css')
         .pipe(connect.reload());
 })
 
 // Слежка за изменением файлов проекта и пересборка
-gulp.task('watch', function (){
+gulp.task('watch', function () {
     //gulp.watch(['app/*.html'], ['html']);
     gulp.watch(['app/css/*.css'], ['css']);
     gulp.watch(['app/less/*.less'], ['less']);
     gulp.watch(['app/js/*.js'], ['js']);
+    gulp.watch(['app/js/vendor/*.js'], ['compress-plugins']);
     gulp.watch('bower.json', ['wiredep']);
     gulp.watch(['app/jade/**/*.jade'], ['jade']);
 })

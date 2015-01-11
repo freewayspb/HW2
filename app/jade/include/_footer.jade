@@ -1,21 +1,22 @@
 .b-footer__container
     footer.b-footer
         .b-footer__logo
-            a(href="" title="").b-footer__logo-img
-        .b-footer__links
-            .b-footer__links-item
+            a(href="" title="логотип яблочного магазинчика").b-footer__logo-img
+                img(src="./img/logo-footer.png" alt="логотип яблочного магазинчика")
+        ul.b-footer__links
+            li.b-footer__links-item
                 h4.b-footer__links-item--title О магазине
                 ul.b-footer__links-item--list
                     each val in ['О нас','Наши цены','Наши скидки','Акции']
                         li
                             a(href='#').b-footer__links-item--link= val
-            .b-footer__links-item
+            li.b-footer__links-item
                 h4.b-footer__links-item--title Каталог
                 ul.b-footer__links-item--list
                     each val in ['Смартфоны','Планшеты','Компьютеры','Аксессуары']
                         li
                             a(href='#').b-footer__links-item--link= val
-            .b-footer__links-item
+            li.b-footer__links-item
                 h4.b-footer__links-item--title Контакты
                 ul.b-footer__links-item--list
                     each val in ['Телефоны','Адреса','Карта проезда','Обратная связь']
