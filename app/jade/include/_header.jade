@@ -1,9 +1,66 @@
-.b-top
-    .b-top__social
-        .b-top__social-vk vkontakte
-        .b-top__social-facebook facebook
-        .b-top__social-twitter twitter
-    .b-top__address
-    .b-top__phone
-        sup.b-top__phone-prefix +7 (921)
-        span.b-top__phone-number 322 12 32
+header.b-header
+    .b-header__top-wrapper
+        .b-top
+            .b-top__social
+                .b-top__social-vk
+                    a(href="http://vk.com/id25443") vkontakte
+                .b-top__social-facebook
+                    a(href="http://fb.com") facebook
+                .b-top__social-twitter
+                    a(href="http://twitter.com") twitter
+            .b-top__address
+                p г. Москва, ул. Новая 246, офис 214
+            .b-top__phone
+                a(href="tel:+79213221232")
+                    sup.b-top__phone-prefix +7 (921)
+                    span.b-top__phone-number 322 12 32
+    .b-header__middle
+        .b-header__middle-container
+            section.b-header__middle-logo
+                a(href="/")
+            section.b-header__middle-search
+                form(action="#").b-search-form
+                    input(type="search" placeholder="iMac 27 дюймов").b-search-form__search-input
+                    input(type="submit" value="Поиск").b-search-form__button
+            section.b-header__links
+                ul.b-header__links-items
+                    li.b-header__links-item
+                        a(href="") Карта проезда
+                    li.b-header__links-item
+                        a(href="") История заказов
+            section.b-header__middle-cart-wrapper
+                a(href="").b-header__middle-cart Корзина&nbsp;
+                    span.b-header__middle-cart-count (3)
+                ul.b-cart__content-items
+                    li.b-cart__content-item
+                        a(href="").b-cart__content-item-link
+                            .b-cart__content-item-link-image
+                                img(src="./img/production/iPhone-6.jpg" alt="iPhone 6")
+                            p.b-cart__content-item-link-title iPhone 6
+                    li.b-cart__content-item
+                        a(href="").b-cart__content-item-link
+                            .b-cart__content-item-link-image
+                                img(src="./img/production/iPad-Air.jpg" alt="iPad Air Wi-Fi + Cellular 128GB - Silver")
+                            p.b-cart__content-item-link-title iPad Air Wi-Fi + Cellular 128GB - Silver
+                    li.b-cart__content-item
+                        a(href="").b-cart__content-item-link
+                            .b-cart__content-item-link-image
+                                img(src="./img/production/MacBook-Air.jpg" alt="MacBook Air")
+                            p.b-cart__content-item-link-title MacBook Air
+    .b-header__menu-container
+        nav.b-header__menu
+            ul.b-header__menu-list
+                li.b-header__menu-list-item
+                    a(href="").b-header__menu-list-item-link Мобильные телефоны
+                li.b-header__menu-list-item
+                    a(href="").b-header__menu-list-item-link.b-header__menu-list-item-link--active Планшеты
+                li.b-header__menu-list-item
+                    a(href="").b-header__menu-list-item-link Mp3 плееры
+                li.b-header__menu-list-item
+                    a(href="").b-header__menu-list-item-link Персональные компьютеры
+                li.b-header__menu-list-item
+                    a(href="").b-header__menu-list-item-link Ноутбуки
+                li.b-header__menu-list-item
+                    a(href="").b-header__menu-list-item-link Apple TV
+                li.b-header__menu-list-item
+                    a(href="").b-header__menu-list-item-link Аксессуары

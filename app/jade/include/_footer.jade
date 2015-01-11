@@ -1,39 +1,31 @@
-.b-footer
-    .b-logo.b-logo_footer
-    .b-links
-        .b-links__element
-            h4.b-links__element__items-title О магазине
-            ul.b-links__element__items
-                each val in ['О нас','Наши цены','Наши скидки','Акции']
-                    li
-                        a(href='#')= val
-        .b-links__element
-            h4.b-links__element__items-title Каталог
-            ul.b-links__element__items
-                each val in ['Смартфоны','Планшеты','Компьютеры','Аксессуары']
-                    li
-                        a(href='#')= val
-        .b-links__element
-            h4.b-links__element__items-title Контакты
-            ul.b-links__element__items
-                each val in ['Телефоны','Адреса','Карта проезда','Обратная связь']
-                    li
-                        a(href='#')= val
-    ul.b-socials
-        .b-socials__app.cf
-            li.b-socials__app-appstore
-                a(href="#")
-                    span.hide App Store
-            li.b-socials__app-googleplay
-                a(href="#")
-                    span.hide Google play
-        .b-socials__socials.cf
-            li.b-socials__socials-vkontakte
-                a(href="#")
-                    span ВКонтакте
-            li.b-socials__socials-facebook
-                a(href="#")
-                    span Facebook
-            li.b-socials__socials-twitter
-                a(href="#")
-                    span Twitter
+.b-footer__container
+    footer.b-footer
+        .b-footer__logo
+            a(href="" title="").b-footer__logo-img
+        .b-footer__links
+            .b-footer__links-item
+                h4.b-footer__links-item--title О магазине
+                ul.b-footer__links-item--list
+                    each val in ['О нас','Наши цены','Наши скидки','Акции']
+                        li
+                            a(href='#').b-footer__links-item--link= val
+            .b-footer__links-item
+                h4.b-footer__links-item--title Каталог
+                ul.b-footer__links-item--list
+                    each val in ['Смартфоны','Планшеты','Компьютеры','Аксессуары']
+                        li
+                            a(href='#').b-footer__links-item--link= val
+            .b-footer__links-item
+                h4.b-footer__links-item--title Контакты
+                ul.b-footer__links-item--list
+                    each val in ['Телефоны','Адреса','Карта проезда','Обратная связь']
+                        li
+                            a(href='#').b-footer__links-item--link= val
+        .b-footer__social
+            .b-downloads__app.cf
+                a(href="#").b-downloads__app-appstore App Store
+                a(href="#").b-downloads__app-googleplay Google play
+            .b-footer__social-icons.cf
+                a(href="#").b-footer__social-vkontakte ВКонтакте
+                a(href="#").b-footer__social-facebook Facebook
+                a(href="#").b-footer__social-twitter Twitter
