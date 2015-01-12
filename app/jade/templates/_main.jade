@@ -1,0 +1,31 @@
+doctype html
+html(lang="ru")
+    head
+        meta(http-equiv='Content-Type', content='text/html; charset=utf-8')
+        meta(http-equiv='X-UA-Compatible', content='IE=edge; chrome=1')
+        title
+            block title
+        meta(name='viewport' content='width=device-width, initial-scale=1.0')
+        link(rel="stylesheet" href="./css/style.css" type="text/css" media="screen")
+        link(rel="stylesheet" href="./fonts/fonts.css" type="text/css" media="screen")
+        <!--[if lt IE 9]>
+        script(src="js/vendor/html5shiv.min.js")
+        <![endif]-->
+        script(src="js/vendor/modernizr-2.6.2.min.js")
+    body.cf
+        <!--[if lt IE 7]>
+        <p class="browsehappy">Вы используете <strong>устаревшый</strong> браузер. Пожалуйста <a href="http://browsehappy.com/">обновите Ваш браузер</a>.</p>
+        <![endif]-->
+        .b-main__container
+            include ../include/_header
+            .content-wrapper
+                include ../include/_content
+        include ../include/_footer
+        .scroll_to_top
+            a(href="" title="Прокрутить к началу").scroll_to_top__link Наверх
+                //.scroll_to_top--bottom-container
+                .scroll_to_top--bottom
+                    .scroll_to_top--bottom-triangle
+        script(src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js")
+        script(src="./js/plugins.min.js")
+        script(src="./js/scripts.min.js")
