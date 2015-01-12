@@ -794,11 +794,12 @@ body {
 // SCROLL TO TOP
 .scroll_to_top {
   position: fixed;
-  width: 80px;
+  overflow:hidden;
   right: 20px;
   bottom: 252px;
   display: none;
   text-align: center;
+  padding: 10px 0;
   &:before {
     position: absolute;
     left: 50%;
@@ -807,15 +808,22 @@ body {
     pointer-events: none;
     border: 5px solid transparent;
     top: 0;
-    margin-top: -10px;
     border-bottom-color: #00b9fe;
   }
+  a{
+    position: relative;
+  }
   &--bottom {
+    position: absolute;
+    left: 50%;
+    margin-left: -3505px;
     width: 10px;
     height: 5px;
-    border-left: 35px solid #00b9fe;
-    border-right: 35px solid #00b9fe;
-    margin-left: -8px;
+    border-left: 3500px solid #00b9fe;
+    border-right: 3500px solid #00b9fe;
+    margin-top: -5px;
+    background: transparent;
+//    margin-left: -8px;
     margin-top: -5px;
     background: transparent;
   }

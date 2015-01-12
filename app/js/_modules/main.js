@@ -3,9 +3,9 @@ $(document).ready(function(){
     // Прокрутка в top
     $(window).scroll(function () {
         if ($(this).scrollTop() > 100) {
-            $('.scroll_to_top').fadeIn();
+            $('.scroll_to_top').show('fast');
         } else {
-            $('.scroll_to_top').fadeOut();
+            $('.scroll_to_top').hide('fast');
         }
     });
     $('.scroll_to_top').click(function () {
